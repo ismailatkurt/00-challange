@@ -1,0 +1,42 @@
+[
+  {
+    "postcode": "10211",
+    "recipe": "Melty Monterey Jack Burgers",
+    "delivery": "Monday 1AM - 2AM"
+  },
+  {
+    "postcode": "10196",
+    "recipe": "Melty Monterey Jack Burgers",
+    "delivery": "Monday 11AM - 11PM"
+  },
+  {
+    "postcode": "10211",
+    "recipe": "Cheesy Chicken Enchilada Bake",
+    "delivery": "Thursday 1AM - 7PM"
+  },
+  {
+    "postcode": "10218",
+    "recipe": "Hot Honey Barbecue Chicken Legs",
+    "delivery": "Tuesday 10AM - 11PM"
+  },
+  {
+    "postcode": "10119",
+    "recipe": "Garden Quesadillas",
+    "delivery": "Saturday 7AM - 8PM"
+  },
+  {
+    "postcode": "10142",
+    "recipe": "Garden Quesadillas",
+    "delivery": "Friday 2AM - 6PM"
+  },
+  {
+    "postcode": "10220",
+    "recipe": "Spinach Artichoke Pasta Bake",
+    "delivery": "Monday 5AM - 4PM"
+  },
+  {
+    "postcode": "10161",
+    "recipe": "Meatloaf à La Mom",
+    "delivery": "Saturday 10AM - 6PM"
+  }
+]

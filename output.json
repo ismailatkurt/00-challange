@@ -1,0 +1,141 @@
+{
+ "unique_recipe_count": 29,
+ "count_per_recipe": [
+  {
+   "recipe": "Cajun-Spiced Pulled Pork",
+   "count": 667365
+  },
+  {
+   "recipe": "Cheesy Chicken Enchilada Bake",
+   "count": 333012
+  },
+  {
+   "recipe": "Cherry Balsamic Pork Chops",
+   "count": 333889
+  },
+  {
+   "recipe": "Chicken Pineapple Quesadillas",
+   "count": 331514
+  },
+  {
+   "recipe": "Chicken Sausage Pizzas",
+   "count": 333306
+  },
+  {
+   "recipe": "Creamy Dill Chicken",
+   "count": 333103
+  },
+  {
+   "recipe": "Creamy Shrimp Tagliatelle",
+   "count": 333395
+  },
+  {
+   "recipe": "Crispy Cheddar Frico Cheeseburgers",
+   "count": 333251
+  },
+  {
+   "recipe": "Garden Quesadillas",
+   "count": 333284
+  },
+  {
+   "recipe": "Garlic Herb Butter Steak",
+   "count": 333649
+  },
+  {
+   "recipe": "Grilled Cheese and Veggie Jumble",
+   "count": 333742
+  },
+  {
+   "recipe": "Hearty Pork Chili",
+   "count": 333355
+  },
+  {
+   "recipe": "Honey Sesame Chicken",
+   "count": 333748
+  },
+  {
+   "recipe": "Hot Honey Barbecue Chicken Legs",
+   "count": 334409
+  },
+  {
+   "recipe": "Korean-Style Chicken Thighs",
+   "count": 333069
+  },
+  {
+   "recipe": "Meatloaf à La Mom",
+   "count": 333570
+  },
+  {
+   "recipe": "Mediterranean Baked Veggies",
+   "count": 332939
+  },
+  {
+   "recipe": "Melty Monterey Jack Burgers",
+   "count": 333264
+  },
+  {
+   "recipe": "Mole-Spiced Beef Tacos",
+   "count": 332993
+  },
+  {
+   "recipe": "One-Pan Orzo Italiano",
+   "count": 333109
+  },
+  {
+   "recipe": "Parmesan-Crusted Pork Tenderloin",
+   "count": 333311
+  },
+  {
+   "recipe": "Spanish One-Pan Chicken",
+   "count": 333291
+  },
+  {
+   "recipe": "Speedy Steak Fajitas",
+   "count": 333578
+  },
+  {
+   "recipe": "Spinach Artichoke Pasta Bake",
+   "count": 333545
+  },
+  {
+   "recipe": "Steakhouse-Style New York Strip",
+   "count": 333473
+  },
+  {
+   "recipe": "Stovetop Mac 'N' Cheese",
+   "count": 333098
+  },
+  {
+   "recipe": "Sweet Apple Pork Tenderloin",
+   "count": 332595
+  },
+  {
+   "recipe": "Tex-Mex Tilapia",
+   "count": 333749
+  },
+  {
+   "recipe": "Yellow Squash Flatbreads",
+   "count": 333394
+  }
+ ],
+ "busiest_postcode": {
+  "postcode": "10176",
+  "delivery_count": 91785
+ },
+ "count_per_postcode_and_time": {
+  "postcode": "10211",
+  "from": "5PM",
+  "to": "6PM",
+  "delivery_count": 0
+ },
+ "match_by_name": [
+  "Chicken Sausage Pizzas",
+  "Korean-Style Chicken Thighs",
+  "Honey Sesame Chicken",
+  "Cheesy Chicken Enchilada Bake",
+  "Hot Honey Barbecue Chicken Legs",
+  "Chicken Pineapple Quesadillas",
+  "Creamy Dill Chicken",
+  "Spanish One-Pan Chicken"
+ ]
+}
