@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  recipe_app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: recipe_app

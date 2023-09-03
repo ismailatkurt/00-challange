@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"encoding/json"
@@ -23,13 +23,10 @@ type Input struct {
 }
 
 func getInputs() *Input {
-	f, err := os.ReadFile(InputsFilePath)
-	if err != nil {
-		_ = fmt.Errorf("could not open inputs file: %s", err.Error())
-	}
+	f := getInputsFile()
 
 	var rawInput RawInput
-	err = json.Unmarshal(f, &rawInput)
+	err := json.Unmarshal(f, &rawInput)
 	if err != nil {
 		log.Println(err)
 	}
@@ -38,11 +35,11 @@ func getInputs() *Input {
 	if err != nil {
 		log.Println(err)
 	}
-	from, err := strconv.ParseUint(strconv.Itoa(int(ConvertTo24HourFormat(rawInput.From))), 10, 8)
+	from, err := strconv.ParseUint(strconv.Itoa(int(convertTo24HourFormat(rawInput.From))), 10, 8)
 	if err != nil {
 		log.Println(err)
 	}
-	to, err := strconv.ParseUint(strconv.Itoa(int(ConvertTo24HourFormat(rawInput.To))), 10, 8)
+	to, err := strconv.ParseUint(strconv.Itoa(int(convertTo24HourFormat(rawInput.To))), 10, 8)
 	if err != nil {
 		log.Println(err)
 	}
@@ -53,4 +50,13 @@ func getInputs() *Input {
 		To:       uint8(to),
 		Keywords: rawInput.Keywords,
 	}
+}
+
+func getInputsFile() []byte {
+	f, err := os.ReadFile(InputsFilePath)
+	if err != nil {
+		_ = fmt.Errorf("could not open inputs file: %s", err.Error())
+	}
+
+	return f
 }

@@ -1,3 +1,55 @@
+# How to Run application
+
+## Build and run application with docker
+- Please make sure docker is running on your host.
+
+```
+cd /into/project/directory
+
+docker build -t recipe-app .
+
+docker run -v /Users/ismailatkurt/Code/HelloFresh/Project/inputs.json:/app/inputs.json recipe-app
+```
+
+You may replace `/Users/ismailatkurt/Code/HelloFresh/Project/inputs.json` with your inputs file.
+Sample file is located in the project directory named as `input.json`. You can change the values in this file and run again
+
+`docker run -v /Users/ismailatkurt/Code/HelloFresh/Project/inputs.json:/app/inputs.json recipe-app`
+
+## Alternative way of running application (Docker Compose)
+
+I have also prepared a docker-compose file. It essentially binds the volume with host to container.
+So that you don't need to pass `inputs.json` file path, just change the contents/values of inputs.json and run
+
+```docker-compose up --build```
+
+## Run without docker
+- Download the recipe file [Link](https://test-golang-recipes.s3-eu-west-1.amazonaws.com/recipe-calculation-test-fixtures/hf_test_calculation_fixtures.tar.gz)
+- Untar the file
+- Make sure name of the file is `hf_test_calculation_fixtures.json`
+- Then execute go run
+
+```go run .```
+
+# Running Tests
+
+Run tests without displaying details
+```
+go test ./...
+```
+
+Run tests with full output even for passing package tests
+```
+go test ./... -v
+```
+
+Run tests with coverage details. When below command executed it will open a page on browser then you can evaluate coverage details per file.
+```
+go test ./... -coverprofile=coverage.out && go tool cover -html=coverage.out
+```
+
+
+---
 Recipe Stats Calculator
 ====
 

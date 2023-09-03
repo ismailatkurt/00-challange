@@ -1,9 +1,14 @@
-package main
+package app
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
+
+func getFileScanner() *bufio.Scanner {
+	return bufio.NewScanner(openFile())
+}
 
 func openFile() *os.File {
 	f, err := os.Open(RecipeFilePath)
