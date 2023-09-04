@@ -1,8 +1,12 @@
 # How to Run application
 
 ## Comments
-- The biggest missing part is making use of GoRoutines. 
+- I believe the biggest missing part is making use of GoRoutines. 
 With more time given I think I could make it in a way to use Go Routines and channels. Probably efficiency/execution time will be less dramatically.
+- Right now execution time is between 3-5 seconds. It is printed to **stderr**.
+  - I don't use JSON.Unmarshall since the performance is terrible. 
+  - The application reads the recipe JSON file line by line.
+  - I have tried to be precise with integer types. Used **unsigned** integer types with **8, 16 and 32 bytes**.
 - Code organisation could have been done more focused with OOP in mind.
 - I download and extract Recipe JSON file while building the Docker Image. Maybe there can be a different way to handle it. I wanted it to work out of box, so I used it this way.
 - Although I also placed option to run it by providing docker volume `-v` flag. So that you can pass your own json data file.
@@ -72,10 +76,27 @@ I have prepared 3 action jobs. Build, Test and Build & Push Docker Image. Since 
 
 However since the repo is private, I hardcoded my credentials (access_token) in GitHub Actions file :) Once you review the challenge I will revoke access token and I don't have any Billing Plan, so it is not useful anyway.
 
+Stage for building and pushing Docker image may look like taking too much time. The main reason is; It is building for 2 different Architecture, linux/amd64 and linux/arm64.
+
 ## Pulling already prepared Image and run
 
 ```
-docker 
+docker pull ismailatkurt/recipe-app
+
+// or specify your platform manually
+
+docker pull ismailatkurt/recipe-app --platform arm64
+```
+
+and run command below. Note that it will use Recipe data from given JSON file as example and sample inputs.json file.
+
+```
+docker run ismailatkurt/recipe-app
+```
+
+Pass `-v` flag to specify your custom files.
+```
+docker run -v /Users/ismailatkurt/Code/HelloFresh/Project/inputs.json:/app/inputs.json -v /Users/ismailatkurt/Code/HelloFresh/hf_test_calculation_fixtures.json:/app/hf_test_calculation_fixtures.json ismailatkurt/recipe-app
 ```
 
 ---
