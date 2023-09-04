@@ -14,11 +14,20 @@ jobs:
           go-version: '1.20'
       - name: Build
         run: go build -v ./...
+  test:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
       - name: Test
         run: go test -v ./...
-
-  docker:
+  publish_image:
     runs-on: ubuntu-latest
+    needs: [build, test]
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
