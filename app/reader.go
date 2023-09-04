@@ -37,6 +37,8 @@ func (r *Reader) ReadDelivery() (string, uint8, uint8) {
 	deliveryLine := r.s.Text()
 	deliveryLine = r.getDeliveryFromLine(&deliveryLine)
 
+	// Here and the next line, I use strings.Cut and .Split
+	// but probably without them, I could have saved 20% of execution time
 	day, timeInterval, _ := strings.Cut(deliveryLine, " ")
 
 	parts := strings.Split(timeInterval, " - ")
@@ -52,6 +54,8 @@ func (r *Reader) getPostcodeFromLine(l *string) string {
 	postcode := strings.Trim(*l, "\t\n\v\f\r ")
 	postcode = postcode[13:]
 
+	// Initially I have used strings.TrimSuffix but it has so bad performance.
+	// Then I assumed the structure is always in correct way and decided to use this approach
 	return postcode[:len(postcode)-2]
 }
 

@@ -8,6 +8,7 @@ import (
 	"strconv"
 )
 
+// RawInput used to json unmarshall for given inputs
 type RawInput struct {
 	Postcode string   `json:"postcode"`
 	From     string   `json:"from"`
@@ -15,6 +16,7 @@ type RawInput struct {
 	Keywords []string `json:"keywords"`
 }
 
+// Input used to compare postcodes and from-to matching. Types added here for better usage.
 type Input struct {
 	Postcode uint16   `json:"postcode"`
 	From     uint8    `json:"from"`

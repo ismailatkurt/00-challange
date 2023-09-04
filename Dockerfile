@@ -1,8 +1,4 @@
-# GO Repo base repo
 FROM golang:1.20.4-alpine as builder
-
-# Add Maintainer Info
-LABEL maintainer="<>"
 
 RUN mkdir /app
 ADD . /app
@@ -11,7 +7,6 @@ WORKDIR /app
 RUN go install
 COPY go.mod ./
 
-# Download all the dependencies
 RUN go mod download
 
 COPY . .
@@ -19,7 +14,6 @@ COPY . .
 # Build the Go app
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o recipe-app .
 
-# GO Repo base repo
 FROM alpine:latest
 
 RUN mkdir /app

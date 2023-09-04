@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	// to be used to calculate execution time
 	t1 := time.Now()
 
 	result := app.Process()

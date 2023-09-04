@@ -1,5 +1,12 @@
 # How to Run application
 
+## Comments
+- The biggest missing part is making use of GoRoutines. 
+With more time given I think I could make it in a way to use Go Routines and channels. Probably efficiency/execution time will be less dramatically.
+- Code organisation could have been done more focused with OOP in mind.
+- I download and extract Recipe JSON file while building the Docker Image. Maybe there can be a different way to handle it.
+- Although I also placed option to run it by providing docker volume `-v` flag. So that you can pass your own json data file.
+
 ## Build and run application with docker
 - Please make sure docker is running on your host.
 
@@ -12,9 +19,18 @@ docker run -v /Users/ismailatkurt/Code/HelloFresh/Project/inputs.json:/app/input
 ```
 
 You may replace `/Users/ismailatkurt/Code/HelloFresh/Project/inputs.json` with your inputs file.
-Sample file is located in the project directory named as `input.json`. You can change the values in this file and run again
+Sample file is located in the project directory named as `inputs.json`. You can change the values in this file and run again
 
 `docker run -v /Users/ismailatkurt/Code/HelloFresh/Project/inputs.json:/app/inputs.json recipe-app`
+
+### Using your own Recipe JSON File
+
+**Recipe JSON file** is being downloaded while building the image. However, you can specify a file to overwrite it when running `docker run` command by passing `-v local-path:/app/hf_test_calculation_fixtures.json`
+
+Example:
+```
+docker run -v /Users/ismailatkurt/Code/HelloFresh/Project/inputs.json:/app/inputs.json -v /Users/ismailatkurt/Code/HelloFresh/hf_test_calculation_fixtures.json:/app/hf_test_calculation_fixtures.json recipe-app
+```
 
 ## Alternative way of running application (Docker Compose)
 
@@ -23,9 +39,11 @@ So that you don't need to pass `inputs.json` file path, just change the contents
 
 ```docker-compose up --build```
 
+Please keep in mind this will use the Recipe JSON file that is given by this [Link](https://test-golang-recipes.s3-eu-west-1.amazonaws.com/recipe-calculation-test-fixtures/hf_test_calculation_fixtures.tar.gz)
+
 ## Run without docker
 - Download the recipe file [Link](https://test-golang-recipes.s3-eu-west-1.amazonaws.com/recipe-calculation-test-fixtures/hf_test_calculation_fixtures.tar.gz)
-- Untar the file
+- Untar/Unzip the file
 - Make sure name of the file is `hf_test_calculation_fixtures.json`
 - Then execute go run
 
@@ -48,6 +66,17 @@ Run tests with coverage details. When below command executed it will open a page
 go test ./... -coverprofile=coverage.out && go tool cover -html=coverage.out
 ```
 
+## GitHub Actions
+
+I have prepared 3 action jobs. Build, Test and Build & Push Docker Image. Since I don't have access to Repo Settings I can't set docker username and token.
+
+However since the repo is private, I hardcoded my credentials (access_token) in GitHub Actions file :) Once you review the challenge I will revoke access token and I don't have any Billing Plan, so it is not useful anyway.
+
+## Pulling already prepared Image and run
+
+```
+docker 
+```
 
 ---
 Recipe Stats Calculator

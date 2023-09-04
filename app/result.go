@@ -12,7 +12,7 @@ type CountPerRecipe struct {
 
 type BusiestPostcode struct {
 	Postcode      string `json:"postcode"`
-	DeliveryCount uint   `json:"delivery_count"`
+	DeliveryCount uint32 `json:"delivery_count"`
 }
 
 type CountPerPostcodeAndTime struct {
@@ -34,6 +34,7 @@ type IResult interface {
 	PrintResults()
 }
 
+// PrintResults Just adding indentation
 func (r *Result) PrintResults() {
 	file, _ := json.MarshalIndent(r, "", " ")
 
@@ -53,7 +54,7 @@ func CreateResult(
 		CountPerRecipe:    cpr,
 		BusiestPostcode: BusiestPostcode{
 			Postcode:      maxPostCode,
-			DeliveryCount: uint(max),
+			DeliveryCount: max,
 		},
 		CountPerPostcodeAndTime: countPerPostcodeAndTime,
 		MatchByName:             matchedRecipeNames,

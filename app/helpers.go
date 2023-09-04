@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// used to compare delivery hours accurately
 func convertTo24HourFormat(s string) uint8 {
 	f := s[len(s)-2:]
 	n, _ := strconv.Atoi(s[:len(s)-2])
@@ -26,6 +27,7 @@ func convertTo24HourFormat(s string) uint8 {
 	return uint8(n + 12)
 }
 
+// used when printing the final result to stdout
 func convertTo12HourFormat(i uint8) string {
 	switch {
 	case i == 0:
@@ -39,6 +41,8 @@ func convertTo12HourFormat(i uint8) string {
 	}
 }
 
+// PrintExecutionDetails Printing Execution details time and memory usage to "stderr"
+// Should be accessible outside of app package, called by main
 func PrintExecutionDetails(duration time.Duration) {
 	_, _ = fmt.Fprintf(os.Stderr, "Execution took: %s\n", duration)
 	_, _ = fmt.Fprintf(os.Stderr, "Memory usage: %s\n", printMemUsage())
