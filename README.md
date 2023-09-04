@@ -81,6 +81,8 @@ Stage for building and pushing Docker image may look like taking too much time. 
 
 ## Pulling already prepared Image and run
 
+Docker image is pushed here -> [Docker HUB](https://hub.docker.com/r/ismailatkurt/recipe-app/tags) 
+
 ```
 docker pull ismailatkurt/recipe-app
 
