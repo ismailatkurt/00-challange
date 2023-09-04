@@ -10,6 +10,7 @@ With more time given I think I could make it in a way to use Go Routines and cha
 - Code organisation could have been done more focused with OOP in mind.
 - I download and extract Recipe JSON file while building the Docker Image. Maybe there can be a different way to handle it. I wanted it to work out of box, so I used it this way.
 - Although I also placed option to run it by providing docker volume `-v` flag. So that you can pass your own json data file.
+- Tests are showcased; I have added a couple of tests but of course it is not okay/enough for Production version :) It is just to show.
 
 ## Build and run application with docker
 - Please make sure docker is running on your host.
