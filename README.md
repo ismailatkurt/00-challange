@@ -4,7 +4,7 @@
 - The biggest missing part is making use of GoRoutines. 
 With more time given I think I could make it in a way to use Go Routines and channels. Probably efficiency/execution time will be less dramatically.
 - Code organisation could have been done more focused with OOP in mind.
-- I download and extract Recipe JSON file while building the Docker Image. Maybe there can be a different way to handle it.
+- I download and extract Recipe JSON file while building the Docker Image. Maybe there can be a different way to handle it. I wanted it to work out of box, so I used it this way.
 - Although I also placed option to run it by providing docker volume `-v` flag. So that you can pass your own json data file.
 
 ## Build and run application with docker
